@@ -8,6 +8,7 @@ from gym import spaces
 from gym.utils import seeding
 import numpy as np
 import random
+from .erdosstate import ErdosState
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +47,7 @@ class ErdosGameEnv(gym.Env):
         self.hash = hash_states
 
         # adding an attribute called model_state to pass in values to
-        self.model_state = []
+        self.model_state = list()
 
         # build up idxs to deal with large powers of 2
         idxs = range(self.K + 1)
@@ -66,7 +67,7 @@ class ErdosGameEnv(gym.Env):
                        "train_attacker": train_attacker, "cattacker": cattacker}
 
         self.action_space = spaces.Discrete(2)
-        self.observation_space = spaces.ErdosState(**sample_dict)
+        self.observation_space = ErdosState(**sample_dict)
         self.viewer = None
 
         # game_state is the state of the game, state is [A, B]
