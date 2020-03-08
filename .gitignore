@@ -5,10 +5,6 @@
 
 .vscode/
 
-_baselines_repo/
-
-_gym_repo/
-
 tmp/models/
 
 images/
