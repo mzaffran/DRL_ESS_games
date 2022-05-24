@@ -3,4 +3,4 @@ matplotlib
 mpi4py
 git+https://github.com/rubai5/gym
 git+https://github.com/rubai5/baselines
-tensorflow==1.15.0
+tensorflow==2.6.4
